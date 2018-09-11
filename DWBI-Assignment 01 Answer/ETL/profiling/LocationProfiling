@@ -1,0 +1,2336 @@
+<?xml version="1.0"?>
+<DataProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources>
+    <DtsDataSource ID="{AAC0340F-8ECF-4530-BE0D-8B0C21FAF925}" Name="AddressProfiling">
+      <DtsConnectionManagerID>AddressProfiling</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}" Name="DESKTOP-LESA2FK\SQLEXPRESS.HousingMarketWarehouseDB">
+      <DtsConnectionManagerID>DESKTOP-LESA2FK\SQLEXPRESS.HousingMarketWarehouseDB</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{FF1748F5-BF07-4EB6-939C-870C646B9FC1}" Name="houseprofiling">
+      <DtsConnectionManagerID>houseprofiling</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{14BF5048-FC94-407F-BC32-F216B1EF223E}" Name="LocationProfiling">
+      <DtsConnectionManagerID>LocationProfiling</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{03BE0880-FEA2-41A9-A889-C4B1BC749571}" Name="RegionProfiling">
+      <DtsConnectionManagerID>RegionProfiling</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{4AB499CD-75C9-496D-9D35-96C1F8751197}" Name="SalesProfiling">
+      <DtsConnectionManagerID>SalesProfiling</DtsConnectionManagerID>
+    </DtsDataSource>
+  </DataSources>
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table Schema="dbo" Table="LocationStaging" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table Schema="dbo" Table="LocationStaging" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table Schema="dbo" Table="LocationStaging" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table Schema="dbo" Table="LocationStaging" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+      <ColumnPatternProfileRequest ID="PatternReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table Schema="dbo" Table="LocationStaging" />
+        <Column IsWildCard="true" />
+        <MaxNumberOfPatterns>10</MaxNumberOfPatterns>
+        <PercentageDataCoverageDesired>95</PercentageDataCoverageDesired>
+        <CaseSensitive>false</CaseSensitive>
+        <Delimiters> \t\r\n</Delimiters>
+        <Symbols>,.;:-"'`~=&amp;/\\@!?()&lt;&gt;[]{}|#*^%</Symbols>
+        <TagTableName />
+      </ColumnPatternProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table Schema="dbo" Table="LocationStaging" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+      <FunctionalDependencyProfileRequest ID="FDReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table Schema="dbo" Table="LocationStaging" />
+        <DeterminantColumns>
+          <Column IsWildCard="true" />
+        </DeterminantColumns>
+        <DependentColumn IsWildCard="true" />
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <FDStrengthThreshold>0.95</FDStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </FunctionalDependencyProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <Column Name="LocationID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <Column Name="RegionID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <Column Name="Suburb" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <Column Name="Postcode" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>1</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <Column Name="CouncilArea" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <Column Name="Lattitude" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>7976</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <Column Name="Longtitude" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>7976</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <Column Name="LocationID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>34857</MaxValue>
+        <Mean>17429</Mean>
+        <StdDev>10062.3491624305</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <Column Name="RegionID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>34857</MaxValue>
+        <Mean>17429</Mean>
+        <StdDev>10062.3491624305</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <Column Name="Postcode" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>3000</MinValue>
+        <MaxValue>3978</MaxValue>
+        <Mean>3116.06285861832</Mean>
+        <StdDev>109.022338812959</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <Column Name="Lattitude" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-38.19043</MinValue>
+        <MaxValue>-37.3902</MaxValue>
+        <Mean>-37.8106342955993</Mean>
+        <StdDev>0.0902772251363738</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <Column Name="Longtitude" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>144.42379</MinValue>
+        <MaxValue>145.52635</MaxValue>
+        <Mean>145.001851131653</Mean>
+        <StdDev>0.120166534505192</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <Column Name="Suburb" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>3</MinLength>
+        <MaxLength>18</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>9</Length>
+            <Count>6030</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>15</Length>
+            <Count>1064</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>3</Length>
+            <Count>467</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>12</Length>
+            <Count>3032</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>6</Length>
+            <Count>2442</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>7</Length>
+            <Count>4939</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>18</Length>
+            <Count>195</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>10</Length>
+            <Count>3017</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>4</Length>
+            <Count>4</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>13</Length>
+            <Count>2137</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>5</Length>
+            <Count>107</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>16</Length>
+            <Count>466</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>17</Length>
+            <Count>235</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>11</Length>
+            <Count>2962</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>14</Length>
+            <Count>2817</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>8</Length>
+            <Count>4943</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <Column Name="CouncilArea" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>4</MinLength>
+        <MaxLength>30</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>23</Length>
+            <Count>6262</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>26</Length>
+            <Count>1893</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>21</Length>
+            <Count>4586</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>24</Length>
+            <Count>3853</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>18</Length>
+            <Count>1362</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>30</Length>
+            <Count>314</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>4</Length>
+            <Count>3</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>19</Length>
+            <Count>1758</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>25</Length>
+            <Count>1280</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>22</Length>
+            <Count>4815</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>17</Length>
+            <Count>1585</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>20</Length>
+            <Count>7100</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>28</Length>
+            <Count>46</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <KeyColumns>
+          <Column Name="LocationID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <Column Name="LocationID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>34857</NumberOfDistinctValues>
+      </ColumnValueDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <KeyColumns>
+          <Column Name="RegionID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <Column Name="RegionID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>34857</NumberOfDistinctValues>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <Column Name="Suburb" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>349</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>Cheltenham</Value>
+            <Count>162</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Donvale</Value>
+            <Count>58</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Maribyrnong</Value>
+            <Count>228</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Moonee Ponds</Value>
+            <Count>285</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Eltham</Value>
+            <Count>91</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Ivanhoe</Value>
+            <Count>234</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Malvern</Value>
+            <Count>222</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Strathmore</Value>
+            <Count>174</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Tarneit</Value>
+            <Count>51</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Brighton East</Value>
+            <Count>393</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>East Melbourne</Value>
+            <Count>59</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Highett</Value>
+            <Count>112</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Reservoir</Value>
+            <Count>844</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Middle Park</Value>
+            <Count>79</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Mont Albert</Value>
+            <Count>112</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Brooklyn</Value>
+            <Count>45</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Caulfield South</Value>
+            <Count>120</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Ormond</Value>
+            <Count>153</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Thornbury</Value>
+            <Count>322</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Thomastown</Value>
+            <Count>107</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Chelsea</Value>
+            <Count>38</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Alphington</Value>
+            <Count>79</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Abbotsford</Value>
+            <Count>137</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Malvern East</Value>
+            <Count>369</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Melton South</Value>
+            <Count>64</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Gladstone Park</Value>
+            <Count>54</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Keilor Downs</Value>
+            <Count>43</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Fitzroy</Value>
+            <Count>150</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Point Cook</Value>
+            <Count>129</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Oakleigh East</Value>
+            <Count>37</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Moorabbin</Value>
+            <Count>126</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Essendon West</Value>
+            <Count>46</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Ferntree Gully</Value>
+            <Count>70</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Mill Park</Value>
+            <Count>176</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>St Kilda</Value>
+            <Count>374</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Epping</Value>
+            <Count>171</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Hampton East</Value>
+            <Count>114</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Wollert</Value>
+            <Count>64</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Bentleigh</Value>
+            <Count>319</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Avondale Heights</Value>
+            <Count>163</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Coburg</Value>
+            <Count>405</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Burwood East</Value>
+            <Count>60</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Heidelberg West</Value>
+            <Count>123</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Canterbury</Value>
+            <Count>137</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>St Albans</Value>
+            <Count>146</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Sunshine West</Value>
+            <Count>197</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Parkville</Value>
+            <Count>57</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Ashburton</Value>
+            <Count>157</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Wantirna</Value>
+            <Count>50</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Braybrook</Value>
+            <Count>93</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Flemington</Value>
+            <Count>112</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Dingley Village</Value>
+            <Count>52</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Kingsbury</Value>
+            <Count>42</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Noble Park</Value>
+            <Count>79</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Parkdale</Value>
+            <Count>89</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Carnegie</Value>
+            <Count>277</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Sunshine North</Value>
+            <Count>151</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Airport West</Value>
+            <Count>162</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Doncaster East</Value>
+            <Count>145</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Aberfeldie</Value>
+            <Count>80</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Watsonia</Value>
+            <Count>97</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Croydon</Value>
+            <Count>134</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>West Melbourne</Value>
+            <Count>66</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Oakleigh South</Value>
+            <Count>134</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Glenroy</Value>
+            <Count>400</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Collingwood</Value>
+            <Count>124</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Bundoora</Value>
+            <Count>172</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Hughesdale</Value>
+            <Count>77</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>North Melbourne</Value>
+            <Count>159</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>West Footscray</Value>
+            <Count>201</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Port Melbourne</Value>
+            <Count>371</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Hillside</Value>
+            <Count>71</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Glen Huntly</Value>
+            <Count>58</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Elwood</Value>
+            <Count>288</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Clifton Hill</Value>
+            <Count>140</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Vermont South</Value>
+            <Count>53</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Bulleen</Value>
+            <Count>160</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Mernda</Value>
+            <Count>92</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Coburg North</Value>
+            <Count>151</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Hoppers Crossing</Value>
+            <Count>186</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Melton West</Value>
+            <Count>38</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Toorak</Value>
+            <Count>278</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Templestowe</Value>
+            <Count>91</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Boronia</Value>
+            <Count>55</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Keysborough</Value>
+            <Count>41</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Altona North</Value>
+            <Count>167</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Maidstone</Value>
+            <Count>175</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Mordialloc</Value>
+            <Count>62</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Keilor Park</Value>
+            <Count>38</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Rosanna</Value>
+            <Count>172</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Glen Waverley</Value>
+            <Count>235</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Wantirna South</Value>
+            <Count>57</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Spotswood</Value>
+            <Count>53</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Brighton</Value>
+            <Count>456</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Mentone</Value>
+            <Count>108</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MacLeod</Value>
+            <Count>83</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Balwyn</Value>
+            <Count>319</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Broadmeadows</Value>
+            <Count>91</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Caulfield North</Value>
+            <Count>83</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Eaglemont</Value>
+            <Count>59</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Clayton South</Value>
+            <Count>46</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Blackburn South</Value>
+            <Count>62</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Elsternwick</Value>
+            <Count>133</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Albert Park</Value>
+            <Count>131</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Heidelberg Heights</Value>
+            <Count>150</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Sunshine</Value>
+            <Count>198</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Dallas</Value>
+            <Count>41</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Sunbury</Value>
+            <Count>157</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Montmorency</Value>
+            <Count>64</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Mount Waverley</Value>
+            <Count>241</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Richmond</Value>
+            <Count>552</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Black Rock</Value>
+            <Count>47</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Melton</Value>
+            <Count>39</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Box Hill</Value>
+            <Count>114</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Balwyn North</Value>
+            <Count>420</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Chadstone</Value>
+            <Count>122</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Beaumaris</Value>
+            <Count>103</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Oakleigh</Value>
+            <Count>108</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Ivanhoe East</Value>
+            <Count>57</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Lalor</Value>
+            <Count>104</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Hampton</Value>
+            <Count>281</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Deer Park</Value>
+            <Count>55</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Burwood</Value>
+            <Count>237</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Ashwood</Value>
+            <Count>136</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Dandenong North</Value>
+            <Count>67</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Westmeadows</Value>
+            <Count>46</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Seaford</Value>
+            <Count>46</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Camberwell</Value>
+            <Count>423</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Murrumbeena</Value>
+            <Count>173</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Niddrie</Value>
+            <Count>144</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Bentleigh East</Value>
+            <Count>583</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Brunswick</Value>
+            <Count>444</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Newport</Value>
+            <Count>251</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Springvale</Value>
+            <Count>53</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Kew East</Value>
+            <Count>134</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Ringwood East</Value>
+            <Count>57</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Roxburgh Park</Value>
+            <Count>90</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Berwick</Value>
+            <Count>47</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Northcote</Value>
+            <Count>424</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Fairfield</Value>
+            <Count>99</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Taylors Lakes</Value>
+            <Count>62</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>South Morang</Value>
+            <Count>110</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Sandringham</Value>
+            <Count>96</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Yarraville</Value>
+            <Count>304</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Frankston South</Value>
+            <Count>51</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Hawthorn</Value>
+            <Count>428</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Ringwood</Value>
+            <Count>94</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Viewbank</Value>
+            <Count>101</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Blackburn</Value>
+            <Count>90</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Blackburn North</Value>
+            <Count>58</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Pascoe Vale</Value>
+            <Count>378</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Surrey Hills</Value>
+            <Count>293</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Frankston</Value>
+            <Count>123</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Kensington</Value>
+            <Count>199</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Fitzroy North</Value>
+            <Count>184</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Prahran</Value>
+            <Count>336</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Brunswick West</Value>
+            <Count>247</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Bayswater</Value>
+            <Count>42</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Doncaster</Value>
+            <Count>257</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Vermont</Value>
+            <Count>46</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Werribee</Value>
+            <Count>178</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Brunswick East</Value>
+            <Count>186</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Heidelberg</Value>
+            <Count>110</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Meadow Heights</Value>
+            <Count>59</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Southbank</Value>
+            <Count>76</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Glen Iris</Value>
+            <Count>491</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Cremorne</Value>
+            <Count>47</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Ascot Vale</Value>
+            <Count>249</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Doreen</Value>
+            <Count>39</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Clayton</Value>
+            <Count>54</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Dandenong</Value>
+            <Count>59</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Kealba</Value>
+            <Count>41</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Carlton</Value>
+            <Count>98</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Hadfield</Value>
+            <Count>103</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Forest Hill</Value>
+            <Count>70</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Footscray</Value>
+            <Count>263</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Greenvale</Value>
+            <Count>87</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Keilor East</Value>
+            <Count>232</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Kingsville</Value>
+            <Count>76</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Mooroolbark</Value>
+            <Count>62</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Templestowe Lower</Value>
+            <Count>212</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Williamstown</Value>
+            <Count>210</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Wyndham Vale</Value>
+            <Count>71</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Ringwood North</Value>
+            <Count>36</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>South Yarra</Value>
+            <Count>435</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Heathmont</Value>
+            <Count>68</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Essendon North</Value>
+            <Count>46</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Wheelers Hill</Value>
+            <Count>95</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>McKinnon</Value>
+            <Count>46</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Armadale</Value>
+            <Count>237</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Edithvale</Value>
+            <Count>45</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Essendon</Value>
+            <Count>409</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Greensborough</Value>
+            <Count>142</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Nunawading</Value>
+            <Count>70</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Hawthorn East</Value>
+            <Count>284</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Windsor</Value>
+            <Count>132</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Tullamarine</Value>
+            <Count>50</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Fawkner</Value>
+            <Count>211</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Yallambie</Value>
+            <Count>50</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Balaclava</Value>
+            <Count>64</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Gowanbrae</Value>
+            <Count>45</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Mulgrave</Value>
+            <Count>102</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Kew</Value>
+            <Count>467</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Craigieburn</Value>
+            <Count>255</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Preston</Value>
+            <Count>485</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>South Kingsville</Value>
+            <Count>41</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Seddon</Value>
+            <Count>112</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Altona</Value>
+            <Count>122</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Aspendale</Value>
+            <Count>40</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Jacana</Value>
+            <Count>55</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Carlton North</Value>
+            <Count>100</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Mitcham</Value>
+            <Count>111</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Rowville</Value>
+            <Count>45</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Melbourne</Value>
+            <Count>204</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Albion</Value>
+            <Count>71</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Oak Park</Value>
+            <Count>135</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>South Melbourne</Value>
+            <Count>194</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <Column Name="Postcode" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>211</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>3178</Value>
+            <Count>45</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3132</Value>
+            <Count>111</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3155</Value>
+            <Count>55</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3750</Value>
+            <Count>64</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3109</Value>
+            <Count>145</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3040</Value>
+            <Count>535</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3172</Value>
+            <Count>67</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3032</Value>
+            <Count>497</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3126</Value>
+            <Count>137</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3000</Value>
+            <Count>204</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3192</Value>
+            <Count>162</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3143</Value>
+            <Count>237</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3186</Value>
+            <Count>456</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3006</Value>
+            <Count>76</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3043</Value>
+            <Count>149</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3206</Value>
+            <Count>210</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3049</Value>
+            <Count>61</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3149</Value>
+            <Count>241</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3198</Value>
+            <Count>46</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3012</Value>
+            <Count>497</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3083</Value>
+            <Count>214</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3060</Value>
+            <Count>211</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3106</Value>
+            <Count>91</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3135</Value>
+            <Count>125</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3029</Value>
+            <Count>263</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3066</Value>
+            <Count>124</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3020</Value>
+            <Count>617</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3169</Value>
+            <Count>71</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3175</Value>
+            <Count>126</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3123</Value>
+            <Count>284</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3095</Value>
+            <Count>126</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3166</Value>
+            <Count>234</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3023</Value>
+            <Count>135</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3189</Value>
+            <Count>126</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3072</Value>
+            <Count>485</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3046</Value>
+            <Count>638</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3338</Value>
+            <Count>69</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3195</Value>
+            <Count>219</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3003</Value>
+            <Count>66</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3103</Value>
+            <Count>330</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3146</Value>
+            <Count>491</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3152</Value>
+            <Count>107</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3052</Value>
+            <Count>57</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3107</Value>
+            <Count>212</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3084</Value>
+            <Count>442</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3130</Value>
+            <Count>210</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3015</Value>
+            <Count>345</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3038</Value>
+            <Count>111</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3184</Value>
+            <Count>288</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3078</Value>
+            <Count>178</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3754</Value>
+            <Count>131</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3067</Value>
+            <Count>137</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3021</Value>
+            <Count>226</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3170</Value>
+            <Count>102</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3124</Value>
+            <Count>423</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3190</Value>
+            <Count>112</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3024</Value>
+            <Count>71</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3047</Value>
+            <Count>187</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3141</Value>
+            <Count>435</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3167</Value>
+            <Count>134</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3161</Value>
+            <Count>83</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3041</Value>
+            <Count>233</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3055</Value>
+            <Count>247</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3104</Value>
+            <Count>420</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3147</Value>
+            <Count>293</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3058</Value>
+            <Count>556</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3204</Value>
+            <Count>518</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3081</Value>
+            <Count>306</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3181</Value>
+            <Count>468</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3064</Value>
+            <Count>356</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3087</Value>
+            <Count>127</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3018</Value>
+            <Count>141</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3121</Value>
+            <Count>612</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3127</Value>
+            <Count>405</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3075</Value>
+            <Count>104</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3173</Value>
+            <Count>41</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3144</Value>
+            <Count>240</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3187</Value>
+            <Count>393</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3138</Value>
+            <Count>62</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3101</Value>
+            <Count>467</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3207</Value>
+            <Count>371</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3044</Value>
+            <Count>378</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3193</Value>
+            <Count>150</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3150</Value>
+            <Count>330</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3059</Value>
+            <Count>87</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3153</Value>
+            <Count>65</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3082</Value>
+            <Count>176</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3105</Value>
+            <Count>160</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3205</Value>
+            <Count>194</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3182</Value>
+            <Count>374</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3136</Value>
+            <Count>192</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3013</Value>
+            <Count>304</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3030</Value>
+            <Count>325</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3019</Value>
+            <Count>93</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3122</Value>
+            <Count>428</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3076</Value>
+            <Count>171</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3165</Value>
+            <Count>583</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3806</Value>
+            <Count>47</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3188</Value>
+            <Count>395</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3196</Value>
+            <Count>119</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3102</Value>
+            <Count>134</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3053</Value>
+            <Count>98</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3145</Value>
+            <Count>393</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3156</Value>
+            <Count>73</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3033</Value>
+            <Count>232</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3039</Value>
+            <Count>285</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3133</Value>
+            <Count>99</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3016</Value>
+            <Count>240</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3085</Value>
+            <Count>133</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3125</Value>
+            <Count>237</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3079</Value>
+            <Count>291</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3073</Value>
+            <Count>844</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3168</Value>
+            <Count>64</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3070</Value>
+            <Count>424</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3142</Value>
+            <Count>278</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3162</Value>
+            <Count>142</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3185</Value>
+            <Count>166</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3042</Value>
+            <Count>344</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3056</Value>
+            <Count>444</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3199</Value>
+            <Count>174</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3057</Value>
+            <Count>186</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3134</Value>
+            <Count>134</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3034</Value>
+            <Count>163</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3088</Value>
+            <Count>179</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3011</Value>
+            <Count>375</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3752</Value>
+            <Count>110</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3111</Value>
+            <Count>58</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3065</Value>
+            <Count>150</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3128</Value>
+            <Count>114</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3028</Value>
+            <Count>49</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3174</Value>
+            <Count>79</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3074</Value>
+            <Count>107</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3071</Value>
+            <Count>322</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3094</Value>
+            <Count>64</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3163</Value>
+            <Count>508</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3429</Value>
+            <Count>158</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3337</Value>
+            <Count>93</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3051</Value>
+            <Count>159</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3151</Value>
+            <Count>60</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3194</Value>
+            <Count>108</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3002</Value>
+            <Count>59</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3131</Value>
+            <Count>140</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3108</Value>
+            <Count>257</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3183</Value>
+            <Count>64</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3037</Value>
+            <Count>154</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3068</Value>
+            <Count>324</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3031</Value>
+            <Count>311</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3171</Value>
+            <Count>53</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3025</Value>
+            <Count>167</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3048</Value>
+            <Count>69</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3191</Value>
+            <Count>96</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3054</Value>
+            <Count>123</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3197</Value>
+            <Count>37</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>3148</Value>
+            <Count>122</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <Column Name="CouncilArea" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>34</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>Stonnington City Council</Value>
+            <Count>1460</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Kingston City Council</Value>
+            <Count>871</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Frankston City Council</Value>
+            <Count>290</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Yarra City Council</Value>
+            <Count>1186</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Banyule City Council</Value>
+            <Count>1861</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Brimbank City Council</Value>
+            <Count>1593</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Bayside City Council</Value>
+            <Count>1764</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Darebin City Council</Value>
+            <Count>2851</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Knox City Council</Value>
+            <Count>371</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Maribyrnong City Council</Value>
+            <Count>1451</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Monash City Council</Value>
+            <Count>1466</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Casey City Council</Value>
+            <Count>176</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Moonee Valley City Council</Value>
+            <Count>1791</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Melton City Council</Value>
+            <Count>292</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Port Phillip City Council</Value>
+            <Count>1280</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Yarra Ranges Shire Council</Value>
+            <Count>102</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Cardinia Shire Council</Value>
+            <Count>41</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Maroondah City Council</Value>
+            <Count>506</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Hobsons Bay City Council</Value>
+            <Count>942</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Glen Eira City Council</Value>
+            <Count>2006</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Hume City Council</Value>
+            <Count>1214</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Nillumbik Shire Council</Value>
+            <Count>88</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Melbourne City Council</Value>
+            <Count>1952</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Whitehorse City Council</Value>
+            <Count>618</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Moreland City Council</Value>
+            <Count>2122</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Boroondara City Council</Value>
+            <Count>3675</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Manningham City Council</Value>
+            <Count>1046</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Wyndham City Council</Value>
+            <Count>624</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Macedon Ranges Shire Council</Value>
+            <Count>46</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Greater Dandenong City Council</Value>
+            <Count>314</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Whittlesea City Council</Value>
+            <Count>828</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnPatternProfile ProfileRequestID="PatternReq" IsExact="false">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <Column Name="Suburb" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <TopRegexPatterns>
+          <PatternDistributionItem>
+            <RegexText>\p{L}+</RegexText>
+            <Frequency>62</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>\p{L}+ EAST</RegexText>
+            <Frequency>7</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>\p{L}+ \p{L}+</RegexText>
+            <Frequency>31</Frequency>
+          </PatternDistributionItem>
+        </TopRegexPatterns>
+      </ColumnPatternProfile>
+      <ColumnPatternProfile ProfileRequestID="PatternReq" IsExact="false">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <Column Name="CouncilArea" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <TopRegexPatterns>
+          <PatternDistributionItem>
+            <RegexText>(\p{L}+ )+CITY COUNCIL</RegexText>
+            <Frequency>99</Frequency>
+          </PatternDistributionItem>
+        </TopRegexPatterns>
+      </ColumnPatternProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <DeterminantColumns>
+          <Column Name="RegionID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="CouncilArea" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <DeterminantColumns>
+          <Column Name="LocationID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="CouncilArea" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <DeterminantColumns>
+          <Column Name="RegionID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="Postcode" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <DeterminantColumns>
+          <Column Name="LocationID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="Postcode" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <DeterminantColumns>
+          <Column Name="RegionID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="Suburb" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <DeterminantColumns>
+          <Column Name="LocationID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="Suburb" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <DeterminantColumns>
+          <Column Name="LocationID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="RegionID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <DeterminantColumns>
+          <Column Name="RegionID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="LocationID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <DeterminantColumns>
+          <Column Name="Postcode" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="CouncilArea" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>false</IsExactFD>
+        <FDStrength>0.962676</FDStrength>
+        <FDViolations>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>3011</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Maribyrnong City Council</DependentValue>
+            <SupportCount>374</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>3012</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Maribyrnong City Council</DependentValue>
+            <SupportCount>452</SupportCount>
+            <ViolationCount>45</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>3023</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Brimbank City Council</DependentValue>
+            <SupportCount>81</SupportCount>
+            <ViolationCount>54</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>3029</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Wyndham City Council</DependentValue>
+            <SupportCount>237</SupportCount>
+            <ViolationCount>26</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>3030</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Wyndham City Council</DependentValue>
+            <SupportCount>309</SupportCount>
+            <ViolationCount>16</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>3032</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Moonee Valley City Council</DependentValue>
+            <SupportCount>269</SupportCount>
+            <ViolationCount>228</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>3037</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Brimbank City Council</DependentValue>
+            <SupportCount>121</SupportCount>
+            <ViolationCount>33</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>3042</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Moonee Valley City Council</DependentValue>
+            <SupportCount>306</SupportCount>
+            <ViolationCount>38</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>3043</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Hume City Council</DependentValue>
+            <SupportCount>54</SupportCount>
+            <ViolationCount>95</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>3054</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Melbourne City Council</DependentValue>
+            <SupportCount>100</SupportCount>
+            <ViolationCount>23</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>3068</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Moreland City Council</DependentValue>
+            <SupportCount>184</SupportCount>
+            <ViolationCount>140</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>3083</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Banyule City Council</DependentValue>
+            <SupportCount>172</SupportCount>
+            <ViolationCount>42</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>3095</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Banyule City Council</DependentValue>
+            <SupportCount>119</SupportCount>
+            <ViolationCount>7</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>3113</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Manningham City Council</DependentValue>
+            <SupportCount>14</SupportCount>
+            <ViolationCount>5</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>3124</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Boroondara City Council</DependentValue>
+            <SupportCount>422</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>3131</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Whitehorse City Council</DependentValue>
+            <SupportCount>70</SupportCount>
+            <ViolationCount>70</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>3133</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Whitehorse City Council</DependentValue>
+            <SupportCount>53</SupportCount>
+            <ViolationCount>46</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>3134</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Maroondah City Council</DependentValue>
+            <SupportCount>98</SupportCount>
+            <ViolationCount>36</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>3145</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Stonnington City Council</DependentValue>
+            <SupportCount>369</SupportCount>
+            <ViolationCount>24</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>3147</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Boroondara City Council</DependentValue>
+            <SupportCount>157</SupportCount>
+            <ViolationCount>136</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>3153</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Knox City Council</DependentValue>
+            <SupportCount>42</SupportCount>
+            <ViolationCount>23</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>3172</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Kingston City Council</DependentValue>
+            <SupportCount>52</SupportCount>
+            <ViolationCount>15</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>3181</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Stonnington City Council</DependentValue>
+            <SupportCount>336</SupportCount>
+            <ViolationCount>132</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>3185</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Glen Eira City Council</DependentValue>
+            <SupportCount>148</SupportCount>
+            <ViolationCount>18</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>3754</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Whittlesea City Council</DependentValue>
+            <SupportCount>92</SupportCount>
+            <ViolationCount>39</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>3977</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Casey City Council</DependentValue>
+            <SupportCount>25</SupportCount>
+            <ViolationCount>8</ViolationCount>
+          </FDViolationItem>
+        </FDViolations>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <DeterminantColumns>
+          <Column Name="Suburb" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="CouncilArea" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>false</IsExactFD>
+        <FDStrength>0.9999426</FDStrength>
+        <FDViolations>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Camberwell</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Boroondara City Council</DependentValue>
+            <SupportCount>422</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>Footscray</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>Maribyrnong City Council</DependentValue>
+            <SupportCount>262</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+        </FDViolations>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="LocationStaging" RowCount="34857" />
+        <DeterminantColumns>
+          <Column Name="Suburb" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="Postcode" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+    </Profiles>
+  </DataProfileOutput>
+</DataProfile>

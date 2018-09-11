@@ -1,0 +1,1691 @@
+<?xml version="1.0"?>
+<DataProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources>
+    <DtsDataSource ID="{AAC0340F-8ECF-4530-BE0D-8B0C21FAF925}" Name="AddressProfiling">
+      <DtsConnectionManagerID>AddressProfiling</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}" Name="DESKTOP-LESA2FK\SQLEXPRESS.HousingMarketWarehouseDB">
+      <DtsConnectionManagerID>DESKTOP-LESA2FK\SQLEXPRESS.HousingMarketWarehouseDB</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{FF1748F5-BF07-4EB6-939C-870C646B9FC1}" Name="houseprofiling">
+      <DtsConnectionManagerID>houseprofiling</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{14BF5048-FC94-407F-BC32-F216B1EF223E}" Name="LocationProfiling">
+      <DtsConnectionManagerID>LocationProfiling</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{03BE0880-FEA2-41A9-A889-C4B1BC749571}" Name="RegionProfiling">
+      <DtsConnectionManagerID>RegionProfiling</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{4AB499CD-75C9-496D-9D35-96C1F8751197}" Name="SalesProfiling">
+      <DtsConnectionManagerID>SalesProfiling</DtsConnectionManagerID>
+    </DtsDataSource>
+  </DataSources>
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table Schema="dbo" Table="AddressStaging" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table Schema="dbo" Table="AddressStaging" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table Schema="dbo" Table="AddressStaging" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table Schema="dbo" Table="AddressStaging" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+      <ColumnPatternProfileRequest ID="PatternReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table Schema="dbo" Table="AddressStaging" />
+        <Column IsWildCard="true" />
+        <MaxNumberOfPatterns>10</MaxNumberOfPatterns>
+        <PercentageDataCoverageDesired>95</PercentageDataCoverageDesired>
+        <CaseSensitive>false</CaseSensitive>
+        <Delimiters> \t\r\n</Delimiters>
+        <Symbols>,.;:-"'`~=&amp;/\\@!?()&lt;&gt;[]{}|#*^%</Symbols>
+        <TagTableName />
+      </ColumnPatternProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table Schema="dbo" Table="AddressStaging" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+      <FunctionalDependencyProfileRequest ID="FDReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table Schema="dbo" Table="AddressStaging" />
+        <DeterminantColumns>
+          <Column IsWildCard="true" />
+        </DeterminantColumns>
+        <DependentColumn IsWildCard="true" />
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <FDStrengthThreshold>0.95</FDStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </FunctionalDependencyProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="AddressStaging" RowCount="34857" />
+        <Column Name="HouseID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="AddressStaging" RowCount="34857" />
+        <Column Name="Address" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="AddressStaging" RowCount="34857" />
+        <Column Name="HouseID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>34857</MaxValue>
+        <Mean>17429</Mean>
+        <StdDev>10062.3491624305</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="AddressStaging" RowCount="34857" />
+        <Column Name="Address" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>8</MinLength>
+        <MaxLength>27</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>23</Length>
+            <Count>29</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>15</Length>
+            <Count>4411</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>9</Length>
+            <Count>585</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>26</Length>
+            <Count>3</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>12</Length>
+            <Count>5596</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>21</Length>
+            <Count>140</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>27</Length>
+            <Count>2</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>24</Length>
+            <Count>18</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>18</Length>
+            <Count>803</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>10</Length>
+            <Count>2020</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>19</Length>
+            <Count>506</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>25</Length>
+            <Count>14</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>13</Length>
+            <Count>6120</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>22</Length>
+            <Count>60</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>16</Length>
+            <Count>2960</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>17</Length>
+            <Count>1672</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>11</Length>
+            <Count>3951</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>20</Length>
+            <Count>306</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>14</Length>
+            <Count>5576</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>8</Length>
+            <Count>85</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="AddressStaging" RowCount="34857" />
+        <KeyColumns>
+          <Column Name="HouseID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="AddressStaging" RowCount="34857" />
+        <Column Name="HouseID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>34857</NumberOfDistinctValues>
+      </ColumnValueDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="AddressStaging" RowCount="34857" />
+        <KeyColumns>
+          <Column Name="Address" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>false</IsExactKey>
+        <KeyStrength>0.9753278</KeyStrength>
+        <KeyViolations>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>5 Charles St</ColumnValue>
+            </ColumnValues>
+            <Count>6</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>25 William St</ColumnValue>
+            </ColumnValues>
+            <Count>4</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>2 George St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>13 George St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>23 Cromwell St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>1 Bruce St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>12 Grandview Av</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>13 Robinson St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>6 Robinson St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>14 Arthur St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>14 Northcote St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>5 Margaret St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>38 Lily St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>28 Blair St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>3 Donald St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>176 Darebin Rd</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>3 Charles St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>12 Mirams St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>16 Smith St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>39 Moore St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>14 James St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>1 Daisy St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>7 Hope St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>21 May St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>7 Churchill Av</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>16 Clyde St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>143b Cornwall Rd</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>57 Bay Rd</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>14 Rose St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>36 Aberfeldie St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>9 Margaret St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>2 Bruce St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>54 Charles St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>33 McCracken St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>38 Stewart St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>53 William St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>1/1 Clarendon St</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>1088 Toorak Rd</ColumnValue>
+            </ColumnValues>
+            <Count>3</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>3/29 Burns St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>11 Highview Rd</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>6/128 Maribyrnong Rd</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>69 Chirnside St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>18 William St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>5 Smith St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>10 Grosvenor St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>9 Queen St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>180 Station St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>2A Austin St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>56 Rose St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>15 Bank St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>5 Field St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>30 Clifton St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>3 Besant St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>72b Beaumaris Pde</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>2/20 Bristol Rd</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>13 Cortina Pl</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>3 Diosma Ct</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>24 Butler St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>375 South Rd</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>4 Newton St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>26 Headingley Rd</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>18 Latham St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>23 Oakpark Dr</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>15 Yarra St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>13 Charles St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>95 Beavers Rd</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>25/510 Glenferrie Rd</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>32 Hillhouse Rd</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>4/339 Union Rd</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>6/13 Alexander St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>1 Leopold St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>2 Tudor Ct</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>27 Pembroke St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>3/9 Poplar Gr</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>21 Wurruk Av</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>7 Garnet St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>14 Herbert St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>27 Tate Av</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>29 Oak St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>14 Murdock St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>21 Beddoe Av</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>40 Whyte St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>8 Brogil Wk</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>1/25 Murray Rd</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>172 Rossmoyne St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>2/157 Buckley St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>51 Elliott Av</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>20 Fawkner St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>33 Oxford St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>12 Terry St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>1/10 Lesley St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>7 Melaleuca Dr</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>41 Cameron St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>54a MacKie Rd</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>21 Princess St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>9 Bruce St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>25 View St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>37 Campbell St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>24 Clarence St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+          <MultiColumnValueDistributionItem>
+            <ColumnValues>
+              <ColumnValue>3/68 Madden St</ColumnValue>
+            </ColumnValues>
+            <Count>2</Count>
+          </MultiColumnValueDistributionItem>
+        </KeyViolations>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="AddressStaging" RowCount="34857" />
+        <Column Name="Address" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>33997</NumberOfDistinctValues>
+      </ColumnValueDistributionProfile>
+      <ColumnPatternProfile ProfileRequestID="PatternReq" IsExact="false">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="AddressStaging" RowCount="34857" />
+        <Column Name="Address" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <TopRegexPatterns>
+          <PatternDistributionItem>
+            <RegexText>\d\d \p{L}+ \p{L}+</RegexText>
+            <Frequency>42</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>\d \p{L}+ \p{L}+</RegexText>
+            <Frequency>16</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>\d\d\d \p{L}+ \p{L}+</RegexText>
+            <Frequency>8</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>\d+/\d\d \p{L}+ \p{L}+</RegexText>
+            <Frequency>14</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>\d+/\d\d\d \p{L}+ \p{L}+</RegexText>
+            <Frequency>7</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>\d+/\d \p{L}+ \p{L}+</RegexText>
+            <Frequency>5</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>\d+\p{L} \p{L}+ \p{L}+</RegexText>
+            <Frequency>5</Frequency>
+          </PatternDistributionItem>
+        </TopRegexPatterns>
+      </ColumnPatternProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="AddressStaging" RowCount="34857" />
+        <DeterminantColumns>
+          <Column Name="HouseID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="Address" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="FDReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="AddressStaging" RowCount="34857" />
+        <DeterminantColumns>
+          <Column Name="Address" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="HouseID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>false</IsExactFD>
+        <FDStrength>0.9753278</FDStrength>
+        <FDViolations>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>1/84 Railway Pde</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>22685</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>11 Harrington Rd</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>82</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>1 Maitland St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>15658</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>53 William St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>16979</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>11 Highview Rd</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>1152</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>1 View Ct</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>1944</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>1 Page St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>33982</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>2 Bruce St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>13522</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>5 Margaret St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>1993</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>10 Beryl St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>16244</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>1 Trinian St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>24648</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>1/16 Osborne Av</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>20553</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>1 Vine Ct</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>31496</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>1 Walter St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>23783</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>1 Wilson St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>24703</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>14 Arthur St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>8194</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>176 Darebin Rd</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>27218</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>3 Charles St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>14012</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>36 Aberfeldie St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>6921</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>11 Judd St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>26381</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>1/12 Hatfield Ct</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>11768</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>1/13 Cartwright St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>7513</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>1/16 Mawbey St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>5837</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>10 Lakeside Cr</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>20062</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>1/17 Park Av</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>20191</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>1/19 Albert St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>8178</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>1/19 Horace St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>6276</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>1/2 Pershing St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>8562</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>1/21 Auburn Gr</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>12992</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>1/22 Kitchener Rd</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>7766</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>1/24 Maddox Rd</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>7051</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>12 Grandview Av</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>4543</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>13 Robinson St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>1980</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>14 Rose St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>3418</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>16 Smith St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>5075</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>21 May St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>20648</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>28 Blair St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2179</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>3 Donald St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>9787</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>39 Moore St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>23139</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>6 Robinson St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>27692</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>11 Kenilworth Gr</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>4613</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>10 Bowen St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>18114</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>10 Edward St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>17007</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>10 Grosvenor St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>841</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>10 Howard St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>4664</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>10 James St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>33361</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>10 Kiewa St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>18399</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>110 Halsey Rd</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>117</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>10 Lauriston Ct</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>16807</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>10 Murphy St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>1741</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>10/127 Somerville Rd</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>19741</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>10/17 Gordon St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>25070</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>10/2 Howlett St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>14097</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>10/37 Greville St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>8034</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>10/9 Westbank Tce</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>23410</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>100 George St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>26448</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>101 Charles St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>32614</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>101 Eaststone Av</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>28300</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>101 Kerr St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>20525</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>101 The Fairway</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>11559</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>102 Bruce St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>8299</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>102/64 Wests Rd</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>6580</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>103 Longview Rd</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>29260</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>1/1 Clarendon St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>13149</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>1 Bruce St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>30064</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>12 Mirams St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>27475</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>13 George St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>33427</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>14 James St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>15946</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>14 Northcote St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>29768</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>143B Cornwall Rd</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>13752</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>16 Clyde St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>33473</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>1088 Toorak Rd</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2781</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>2 George St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>19281</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>23 Cromwell St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>4904</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>25 William St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>11316</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>3</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>5 Charles St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>5</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>5</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>33 McCracken St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>14111</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>38 Lily St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>9073</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>38 Stewart St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>21445</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>54 Charles St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>7438</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>57 Bay Rd</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>17281</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>7 Churchill Av</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>6177</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>7 Hope St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>4532</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>11 Kerferd St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>12636</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>11 Margaret St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>13300</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>11 Marlborough St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>31934</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>11 Murphy St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>13525</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>11 Nottingham St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>5793</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>11 Simon Ct</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>23117</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>11 Stephens St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>31572</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>11 Summerhill Rd</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>2123</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>11 The Avenue</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>34461</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>11 Thomson St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>25259</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>11 Vincent St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>4505</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>11 Wilson St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>1317</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>1 Daisy St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>14970</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>1107/50 Albert Rd</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>9140</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>112 Belmore Rd</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>996</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>112/405 High St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>24605</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>1</ViolationCount>
+          </FDViolationItem>
+          <FDViolationItem>
+            <DeterminantValues>
+              <ColumnValue>9 Margaret St</ColumnValue>
+            </DeterminantValues>
+            <DependentValue>16113</DependentValue>
+            <SupportCount>1</SupportCount>
+            <ViolationCount>2</ViolationCount>
+          </FDViolationItem>
+        </FDViolations>
+      </FunctionalDependencyProfile>
+    </Profiles>
+  </DataProfileOutput>
+</DataProfile>

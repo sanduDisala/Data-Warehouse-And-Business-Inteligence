@@ -1,0 +1,732 @@
+<?xml version="1.0"?>
+<DataProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources>
+    <DtsDataSource ID="{AAC0340F-8ECF-4530-BE0D-8B0C21FAF925}" Name="AddressProfiling">
+      <DtsConnectionManagerID>AddressProfiling</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}" Name="DESKTOP-LESA2FK\SQLEXPRESS.HousingMarketWarehouseDB">
+      <DtsConnectionManagerID>DESKTOP-LESA2FK\SQLEXPRESS.HousingMarketWarehouseDB</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{FF1748F5-BF07-4EB6-939C-870C646B9FC1}" Name="houseprofiling">
+      <DtsConnectionManagerID>houseprofiling</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{14BF5048-FC94-407F-BC32-F216B1EF223E}" Name="LocationProfiling">
+      <DtsConnectionManagerID>LocationProfiling</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{03BE0880-FEA2-41A9-A889-C4B1BC749571}" Name="RegionProfiling">
+      <DtsConnectionManagerID>RegionProfiling</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{4AB499CD-75C9-496D-9D35-96C1F8751197}" Name="SalesProfiling">
+      <DtsConnectionManagerID>SalesProfiling</DtsConnectionManagerID>
+    </DtsDataSource>
+  </DataSources>
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table Schema="dbo" Table="SalesStaging" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table Schema="dbo" Table="SalesStaging" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table Schema="dbo" Table="SalesStaging" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table Schema="dbo" Table="SalesStaging" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+      <ColumnPatternProfileRequest ID="PatternReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table Schema="dbo" Table="SalesStaging" />
+        <Column IsWildCard="true" />
+        <MaxNumberOfPatterns>10</MaxNumberOfPatterns>
+        <PercentageDataCoverageDesired>95</PercentageDataCoverageDesired>
+        <CaseSensitive>false</CaseSensitive>
+        <Delimiters> \t\r\n</Delimiters>
+        <Symbols>,.;:-"'`~=&amp;/\\@!?()&lt;&gt;[]{}|#*^%</Symbols>
+        <TagTableName />
+      </ColumnPatternProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table Schema="dbo" Table="SalesStaging" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+      <FunctionalDependencyProfileRequest ID="FDReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table Schema="dbo" Table="SalesStaging" />
+        <DeterminantColumns>
+          <Column IsWildCard="true" />
+        </DeterminantColumns>
+        <DependentColumn IsWildCard="true" />
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <FDStrengthThreshold>0.95</FDStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </FunctionalDependencyProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="SalesStaging" RowCount="34857" />
+        <Column Name="SalesID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="SalesStaging" RowCount="34857" />
+        <Column Name="SellerAgent" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="SalesStaging" RowCount="34857" />
+        <Column Name="SoldDate" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>21472</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="SalesStaging" RowCount="34857" />
+        <Column Name="SalesID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>34857</MaxValue>
+        <Mean>17429</Mean>
+        <StdDev>10062.3491624305</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="SalesStaging" RowCount="34857" />
+        <Column Name="SoldDate" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>2016-03-09T00:00:00.0000000</MinValue>
+        <MaxValue>2018-10-03T00:00:00.0000000</MaxValue>
+      </ColumnStatisticsProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="SalesStaging" RowCount="34857" />
+        <Column Name="SellerAgent" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>1</MinLength>
+        <MaxLength>27</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>23</Length>
+            <Count>3</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>9</Length>
+            <Count>1931</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>15</Length>
+            <Count>5</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>3</Length>
+            <Count>3987</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>12</Length>
+            <Count>211</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>6</Length>
+            <Count>11017</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>21</Length>
+            <Count>4</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>27</Length>
+            <Count>7</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>7</Length>
+            <Count>2380</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>1</Length>
+            <Count>52</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>10</Length>
+            <Count>282</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>4</Length>
+            <Count>2741</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>19</Length>
+            <Count>4</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>13</Length>
+            <Count>2653</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>5</Length>
+            <Count>4884</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>22</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>16</Length>
+            <Count>3</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>2</Length>
+            <Count>1058</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>17</Length>
+            <Count>3</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>11</Length>
+            <Count>31</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>20</Length>
+            <Count>4</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>14</Length>
+            <Count>1</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>8</Length>
+            <Count>3595</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="SalesStaging" RowCount="34857" />
+        <KeyColumns>
+          <Column Name="SalesID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="SalesStaging" RowCount="34857" />
+        <Column Name="SalesID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>34857</NumberOfDistinctValues>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="SalesStaging" RowCount="34857" />
+        <Column Name="SellerAgent" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>383</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>Barlow</Value>
+            <Count>54</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Walshe</Value>
+            <Count>62</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Harcourts</Value>
+            <Count>447</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Pagan</Value>
+            <Count>56</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Buckingham</Value>
+            <Count>118</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Ray</Value>
+            <Count>1950</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Dingle</Value>
+            <Count>55</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Wilson</Value>
+            <Count>40</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Stockdale</Value>
+            <Count>420</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Biggin</Value>
+            <Count>897</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Sweeney</Value>
+            <Count>411</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>McDonald</Value>
+            <Count>85</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>HAR</Value>
+            <Count>309</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Moonee</Value>
+            <Count>82</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Frank</Value>
+            <Count>85</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Hodges</Value>
+            <Count>413</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Prof.</Value>
+            <Count>60</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Haughton</Value>
+            <Count>40</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Gary</Value>
+            <Count>413</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>GL</Value>
+            <Count>36</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Considine</Value>
+            <Count>60</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Rendina</Value>
+            <Count>124</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>FN</Value>
+            <Count>75</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MICM</Value>
+            <Count>56</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Fletchers</Value>
+            <Count>861</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>McGrath</Value>
+            <Count>602</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Douglas</Value>
+            <Count>167</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Buxton</Value>
+            <Count>1868</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>LITTLE</Value>
+            <Count>75</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Edward</Value>
+            <Count>57</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Eview</Value>
+            <Count>123</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Love</Value>
+            <Count>269</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>O'Brien</Value>
+            <Count>225</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Jellis</Value>
+            <Count>3359</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Whiting</Value>
+            <Count>40</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>C21</Value>
+            <Count>159</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Nelson</Value>
+            <Count>3236</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Village</Value>
+            <Count>217</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Burnham</Value>
+            <Count>68</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Marshall</Value>
+            <Count>2027</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Jas</Value>
+            <Count>457</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Williams</Value>
+            <Count>203</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Morrison</Value>
+            <Count>113</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>RT</Value>
+            <Count>516</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Woodards</Value>
+            <Count>714</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Darren</Value>
+            <Count>117</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>RW</Value>
+            <Count>273</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Philip</Value>
+            <Count>172</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>hockingstuart</Value>
+            <Count>2623</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Noel</Value>
+            <Count>524</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Thomson</Value>
+            <Count>104</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Alexkarbon</Value>
+            <Count>79</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Miles</Value>
+            <Count>478</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Abercromby's</Value>
+            <Count>49</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Greg</Value>
+            <Count>519</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Barry</Value>
+            <Count>3235</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Caine</Value>
+            <Count>41</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Lindellas</Value>
+            <Count>35</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Jason</Value>
+            <Count>44</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Raine</Value>
+            <Count>326</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Peter</Value>
+            <Count>68</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Nick</Value>
+            <Count>104</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Bells</Value>
+            <Count>90</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Brad</Value>
+            <Count>701</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Chisholm</Value>
+            <Count>166</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>LJ</Value>
+            <Count>104</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Purplebricks</Value>
+            <Count>160</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Collins</Value>
+            <Count>124</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>YPA</Value>
+            <Count>473</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Kay</Value>
+            <Count>360</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Reliance</Value>
+            <Count>51</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Cayzer</Value>
+            <Count>101</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="SalesStaging" RowCount="34857" />
+        <Column Name="SoldDate" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>32</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>2016-03-09T00:00:00.0000000</Value>
+            <Count>333</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2017-04-11T00:00:00.0000000</Value>
+            <Count>103</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2017-11-03T00:00:00.0000000</Value>
+            <Count>65</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-12-06T00:00:00.0000000</Value>
+            <Count>76</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-03-12T00:00:00.0000000</Value>
+            <Count>472</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2018-10-02T00:00:00.0000000</Value>
+            <Count>341</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2017-04-03T00:00:00.0000000</Value>
+            <Count>532</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2017-08-04T00:00:00.0000000</Value>
+            <Count>451</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2018-06-01T00:00:00.0000000</Value>
+            <Count>787</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2017-06-05T00:00:00.0000000</Value>
+            <Count>236</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-07-05T00:00:00.0000000</Value>
+            <Count>419</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-07-11T00:00:00.0000000</Value>
+            <Count>306</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-04-02T00:00:00.0000000</Value>
+            <Count>44</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2017-12-08T00:00:00.0000000</Value>
+            <Count>546</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2017-01-07T00:00:00.0000000</Value>
+            <Count>482</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2017-08-07T00:00:00.0000000</Value>
+            <Count>429</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2017-03-09T00:00:00.0000000</Value>
+            <Count>567</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2017-07-10T00:00:00.0000000</Value>
+            <Count>593</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2018-10-03T00:00:00.0000000</Value>
+            <Count>168</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2018-03-02T00:00:00.0000000</Value>
+            <Count>117</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2017-03-06T00:00:00.0000000</Value>
+            <Count>689</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2017-11-02T00:00:00.0000000</Value>
+            <Count>132</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-06-08T00:00:00.0000000</Value>
+            <Count>258</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2018-03-03T00:00:00.0000000</Value>
+            <Count>846</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-12-11T00:00:00.0000000</Value>
+            <Count>475</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-04-06T00:00:00.0000000</Value>
+            <Count>368</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-10-09T00:00:00.0000000</Value>
+            <Count>382</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2017-09-09T00:00:00.0000000</Value>
+            <Count>598</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2017-11-11T00:00:00.0000000</Value>
+            <Count>729</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-10-12T00:00:00.0000000</Value>
+            <Count>528</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-08-10T00:00:00.0000000</Value>
+            <Count>386</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2017-09-12T00:00:00.0000000</Value>
+            <Count>927</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnPatternProfile ProfileRequestID="PatternReq" IsExact="false">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="SalesStaging" RowCount="34857" />
+        <Column Name="SellerAgent" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <TopRegexPatterns>
+          <PatternDistributionItem>
+            <RegexText>HOCKINGSTUART</RegexText>
+            <Frequency>8</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>JELLIS</RegexText>
+            <Frequency>10</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>NELSON</RegexText>
+            <Frequency>9</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>MARSHALL</RegexText>
+            <Frequency>6</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>BARRY</RegexText>
+            <Frequency>8</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>BUXTON</RegexText>
+            <Frequency>5</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>RAY</RegexText>
+            <Frequency>6</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>\p{L}+</RegexText>
+            <Frequency>46</Frequency>
+          </PatternDistributionItem>
+        </TopRegexPatterns>
+      </ColumnPatternProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="SalesStaging" RowCount="34857" />
+        <DeterminantColumns>
+          <Column Name="SalesID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="SoldDate" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="SalesStaging" RowCount="34857" />
+        <DeterminantColumns>
+          <Column Name="SalesID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="SellerAgent" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+    </Profiles>
+  </DataProfileOutput>
+</DataProfile>

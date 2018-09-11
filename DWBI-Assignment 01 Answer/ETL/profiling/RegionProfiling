@@ -1,0 +1,238 @@
+<?xml version="1.0"?>
+<DataProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources>
+    <DtsDataSource ID="{AAC0340F-8ECF-4530-BE0D-8B0C21FAF925}" Name="AddressProfiling">
+      <DtsConnectionManagerID>AddressProfiling</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}" Name="DESKTOP-LESA2FK\SQLEXPRESS.HousingMarketWarehouseDB">
+      <DtsConnectionManagerID>DESKTOP-LESA2FK\SQLEXPRESS.HousingMarketWarehouseDB</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{FF1748F5-BF07-4EB6-939C-870C646B9FC1}" Name="houseprofiling">
+      <DtsConnectionManagerID>houseprofiling</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{14BF5048-FC94-407F-BC32-F216B1EF223E}" Name="LocationProfiling">
+      <DtsConnectionManagerID>LocationProfiling</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{03BE0880-FEA2-41A9-A889-C4B1BC749571}" Name="RegionProfiling">
+      <DtsConnectionManagerID>RegionProfiling</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{4AB499CD-75C9-496D-9D35-96C1F8751197}" Name="SalesProfiling">
+      <DtsConnectionManagerID>SalesProfiling</DtsConnectionManagerID>
+    </DtsDataSource>
+  </DataSources>
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table Schema="dbo" Table="RegionStaging" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table Schema="dbo" Table="RegionStaging" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table Schema="dbo" Table="RegionStaging" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table Schema="dbo" Table="RegionStaging" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+      <ColumnPatternProfileRequest ID="PatternReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table Schema="dbo" Table="RegionStaging" />
+        <Column IsWildCard="true" />
+        <MaxNumberOfPatterns>10</MaxNumberOfPatterns>
+        <PercentageDataCoverageDesired>95</PercentageDataCoverageDesired>
+        <CaseSensitive>false</CaseSensitive>
+        <Delimiters> \t\r\n</Delimiters>
+        <Symbols>,.;:-"'`~=&amp;/\\@!?()&lt;&gt;[]{}|#*^%</Symbols>
+        <TagTableName />
+      </ColumnPatternProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table Schema="dbo" Table="RegionStaging" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+      <FunctionalDependencyProfileRequest ID="FDReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table Schema="dbo" Table="RegionStaging" />
+        <DeterminantColumns>
+          <Column IsWildCard="true" />
+        </DeterminantColumns>
+        <DependentColumn IsWildCard="true" />
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <FDStrengthThreshold>0.95</FDStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </FunctionalDependencyProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="RegionStaging" RowCount="34857" />
+        <Column Name="RegionID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="RegionStaging" RowCount="34857" />
+        <Column Name="RegionName" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="RegionStaging" RowCount="34857" />
+        <Column Name="RegionID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1</MinValue>
+        <MaxValue>34857</MaxValue>
+        <Mean>17429</Mean>
+        <StdDev>10062.3491624305</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="RegionStaging" RowCount="34857" />
+        <Column Name="RegionName" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>4</MinLength>
+        <MaxLength>26</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>26</Length>
+            <Count>1739</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>21</Length>
+            <Count>21393</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>4</Length>
+            <Count>3</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>16</Length>
+            <Count>343</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>17</Length>
+            <Count>203</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>20</Length>
+            <Count>11176</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="RegionStaging" RowCount="34857" />
+        <KeyColumns>
+          <Column Name="RegionID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="RegionStaging" RowCount="34857" />
+        <Column Name="RegionID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>34857</NumberOfDistinctValues>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="RegionStaging" RowCount="34857" />
+        <Column Name="RegionName" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>9</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>Northern Victoria</Value>
+            <Count>203</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>South-Eastern Metropolitan</Value>
+            <Count>1739</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Western Victoria</Value>
+            <Count>115</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Eastern Victoria</Value>
+            <Count>228</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Western Metropolitan</Value>
+            <Count>6799</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Southern Metropolitan</Value>
+            <Count>11836</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Northern Metropolitan</Value>
+            <Count>9557</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>Eastern Metropolitan</Value>
+            <Count>4377</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnPatternProfile ProfileRequestID="PatternReq" IsExact="false">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="RegionStaging" RowCount="34857" />
+        <Column Name="RegionName" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <TopRegexPatterns>
+          <PatternDistributionItem>
+            <RegexText>SOUTHERN METROPOLITAN</RegexText>
+            <Frequency>34</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>NORTHERN METROPOLITAN</RegexText>
+            <Frequency>28</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>WESTERN METROPOLITAN</RegexText>
+            <Frequency>19</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>EASTERN METROPOLITAN</RegexText>
+            <Frequency>13</Frequency>
+          </PatternDistributionItem>
+          <PatternDistributionItem>
+            <RegexText>SOUTH-EASTERN METROPOLITAN</RegexText>
+            <Frequency>5</Frequency>
+          </PatternDistributionItem>
+        </TopRegexPatterns>
+      </ColumnPatternProfile>
+      <FunctionalDependencyProfile IsExact="true" ProfileRequestID="">
+        <DataSourceID>{4B2C32DA-05E6-4671-BCCF-EC1AB8A61A28}</DataSourceID>
+        <Table DataSource="DESKTOP-LESA2FK\SQLEXPRESS" Database="HousingMarketWarehouseDB" Schema="dbo" Table="RegionStaging" RowCount="34857" />
+        <DeterminantColumns>
+          <Column Name="RegionID" SqlDbType="Int" MaxLength="0" Precision="10" Scale="0" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </DeterminantColumns>
+        <DependentColumn Name="RegionName" SqlDbType="NVarChar" MaxLength="50" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IsExactFD>true</IsExactFD>
+      </FunctionalDependencyProfile>
+    </Profiles>
+  </DataProfileOutput>
+</DataProfile>
